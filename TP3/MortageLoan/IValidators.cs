@@ -21,10 +21,8 @@ namespace MortageLoan
             {
                 throw new InvalidNumberOfMonthsException();
             }
-
         }
 
-        
         // Interest rate must be double
         public static void ValidateInterestRate(string rate)
         {
@@ -35,10 +33,10 @@ namespace MortageLoan
             }
         }
 
-        // Number of args must be 3
+        // Number of args must be 4
         public static void ValidateNumberOfArgs(string[] args)
         {
-            if (args.Length != 3)
+            if (args.Length != 4)
             {
                 throw new InvalidNumberOfArgsException();
             }

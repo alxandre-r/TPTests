@@ -64,4 +64,46 @@ namespace MortageLoanTests
             Assert.Equal(expected, LoanCalculator.TotalPayment(loanAmount, duration, rate));
         }
     }
+
+    public class CSVTests
+    {
+        [Fact]
+        [Trait("Category", "CSV")]
+        public void CSVFileIsCreated()
+        {
+            string path = "C:\\Temp\\mortage.csv";
+            double totalCost = 50000;
+            double monthlyPayment = 500;
+            int duration = 120;
+
+            CSVWriter.Write(path, totalCost, monthlyPayment, duration);
+
+            Assert.True(File.Exists(path));
+        }
+
+        [Fact]
+        [Trait("Category", "CSV")]
+        public void Write_ChecksFileContent()
+        {
+            string path = "C:\\Temp\\mortage.csv";
+            double totalCost = 10000;
+            double monthlyPayment = 500;
+            int duration = 12;
+
+            CSVWriter.Write(path, totalCost, monthlyPayment, duration);
+
+            string[] lines = File.ReadAllLines(path);
+            // cost assertion
+            Assert.Contains("Total cost: 10000", lines[0]);
+            // Header 
+            Assert.Equal("Month;Reimbursed;Remaining", lines[1]);
+            // Row
+            for (int i = 1; i <= duration; i++)
+            {
+                double reimbursed = monthlyPayment * i;
+                double remaining = totalCost - reimbursed;
+                Assert.Contains($"{i};{reimbursed};{remaining}", lines[i + 1]);
+            }
+        }
+    }
 }
