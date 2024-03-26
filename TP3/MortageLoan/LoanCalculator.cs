@@ -3,11 +3,20 @@
     public class LoanCalculator
     {
 
-        public static int MontlhyPayment(int loanAmount, int duration, double rate)
+        public static double MontlhyPayment(int loanAmount, int duration, double rate)
         {
-            Validators.ValidateLoanAmount(loanAmount);
-            Validators.ValidateNumberOfMonths(duration);
-            
+            double monthlyRate = rate / 100 / 12;
+            double denominator = Math.Pow(1 + monthlyRate, -duration);
+            double monthlyPayment = (loanAmount * monthlyRate) / (1 - denominator);
+
+            monthlyPayment = Math.Round(monthlyPayment, 2);
+            return monthlyPayment;
+        }
+
+
+        public static double TotalPayment(int loanAmount, int duration, double rate)
+        {
+
             return 0;
         }
     }
