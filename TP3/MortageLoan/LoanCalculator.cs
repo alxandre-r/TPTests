@@ -2,16 +2,13 @@
 {
     public class LoanCalculator
     {
-        // TODO : input string to int and double
-        private int LoanAmount;
-        private int Months;
-        private double InterestRate;
 
-        public LoanCalculator(int loanAmount, int months, double interestRate)
+        public static int MontlhyPayment(int loanAmount, int duration, double rate)
         {
             Validators.ValidateLoanAmount(loanAmount);
-
+            Validators.ValidateNumberOfMonths(duration);
+            
+            return 0;
         }
-
     }
 }

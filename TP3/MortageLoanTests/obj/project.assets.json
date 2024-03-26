@@ -5538,11 +5538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
+      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
       "projectName": "MortageLoanTests",
-      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
+      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
       "packagesPath": "C:\\Users\\dubte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\MortageLoanTests\\obj\\",
+      "outputPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dubte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5559,8 +5559,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\MortageLoan\\MortageLoan.csproj": {
-              "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\MortageLoan\\MortageLoan.csproj"
+            "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj": {
+              "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj"
             }
           }
         }
