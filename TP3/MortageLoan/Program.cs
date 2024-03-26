@@ -9,15 +9,13 @@ namespace MortageLoan
             try
             {
                 IValidators.ValidateNumberOfArgs(args);
-                IValidators.ValidateArgsType(args);
+                IValidators.ValidateInterestRate(args[2]);
 
                 int loanAmount = int.Parse(args[0]);
                 int duration = int.Parse(args[1]);
-                double rate;
-                if (!double.TryParse(args[2].Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out rate))
-                {
-                    throw new FormatException("Interest rate is not in a correct format.");
-                }
+                double rate = double.Parse(args[2].Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture);
+
+
 
                 IValidators.ValidateLoanAmount(loanAmount);
                 IValidators.ValidateNumberOfMonths(duration);
@@ -27,10 +25,11 @@ namespace MortageLoan
                 Console.WriteLine("Interest rate: " + args[2]);
 
                 Console.WriteLine("Monthly payment: " + LoanCalculator.MontlhyPayment(loanAmount, duration, rate));
+                Console.WriteLine("Total payment: " + LoanCalculator.TotalPayment(loanAmount, duration, rate));
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
             }
         }
     }

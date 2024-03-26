@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace MortageLoan
 {
@@ -20,9 +21,10 @@ namespace MortageLoan
             {
                 throw new InvalidNumberOfMonthsException();
             }
-                    
+
         }
 
+        
         // Interest rate must be double
         public static void ValidateInterestRate(string rate)
         {
@@ -41,19 +43,5 @@ namespace MortageLoan
                 throw new InvalidNumberOfArgsException();
             }
         }
-
-        // Args must not be int or double
-        public static void ValidateArgsType(string[] args)
-        {
-            foreach (var arg in args)
-            {
-                if (!int.TryParse(arg, out int _))
-                {
-                        throw new InvalidArgsTypeException();
-                }
-            }
-        }
-
-
     }
 }

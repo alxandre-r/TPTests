@@ -16,8 +16,10 @@
 
         public static double TotalPayment(int loanAmount, int duration, double rate)
         {
-
-            return 0;
+            double monthlyPayment = MontlhyPayment(loanAmount, duration, rate);
+            double totalPayment = monthlyPayment * duration;
+            
+            return totalPayment;
         }
     }
 }

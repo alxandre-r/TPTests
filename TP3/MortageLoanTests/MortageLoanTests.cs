@@ -41,14 +41,6 @@ namespace MortageLoanTests
             string[] args = new string[] { "50000", "120" };
             Assert.Throws<InvalidNumberOfArgsException>(() => IValidators.ValidateNumberOfArgs(args));
         }
-
-        [Fact]
-        [Trait("Category", "UserInput")]
-        public void ArgsTypeIsNotNumber()
-        {
-            string[] args = new string[] { "string", "string", "string" };
-            Assert.Throws<InvalidArgsTypeException>(() => IValidators.ValidateArgsType(args));
-        }
     }
 
     public class LoanCalculatorTests
@@ -64,14 +56,12 @@ namespace MortageLoanTests
             Assert.Equal(expected, LoanCalculator.MontlhyPayment(loanAmount, duration, rate));
         }
 
-        [Fact]
+        [Theory]
+        [InlineData(50000, 108, 1, 52304.40)]
         [Trait("Category", "Calculation")]
-        public void TotalPaymentCalculation()
+        public void TotalPaymentCalculation(int loanAmount, int duration, double rate, double expected)
         {
-            int loanAmount = 50000;
-            int duration = 108;
-            double rate = 5.5;
-            Assert.Equal(0, LoanCalculator.TotalPayment(loanAmount, duration, rate));
+            Assert.Equal(expected, LoanCalculator.TotalPayment(loanAmount, duration, rate));
         }
     }
 }

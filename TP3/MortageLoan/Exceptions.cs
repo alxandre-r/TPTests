@@ -12,16 +12,11 @@
 
     public class InvalidInterestRateException : Exception
     {
-        public InvalidInterestRateException() : base("Interest rate must be in format xx,xx"){}
+        public InvalidInterestRateException() : base("Interest rate must be in format x,x"){}
     }
 
     public class InvalidNumberOfArgsException : Exception
     {
         public InvalidNumberOfArgsException() : base("Number of arguments must be 3") { }
-    }
-
-    public class InvalidArgsTypeException : Exception
-    {
-        public InvalidArgsTypeException() : base("Arguments must be numbers") { }
     }
 }
