@@ -1,25 +1,21 @@
-﻿namespace MortageLoan
+﻿using System;
+
+namespace MortageLoan
 {
     public class LoanCalculator
     {
-
-        public static double MontlhyPayment(int loanAmount, int duration, double rate)
+        public static decimal MonthlyPayment(int loanAmount, int duration, decimal annualRate)
         {
-            double monthlyRate = rate / 100 / 12;
-            double denominator = Math.Pow(1 + monthlyRate, -duration);
-            double monthlyPayment = (loanAmount * monthlyRate) / (1 - denominator);
-
-            monthlyPayment = Math.Round(monthlyPayment, 2);
-            return monthlyPayment;
+            decimal monthlyPayment = loanAmount * (annualRate / 100 / 12) / (decimal)(1 - Math.Pow(1 + (double)(annualRate / 100 / 12), -duration));
+            return (decimal)monthlyPayment;
         }
 
-
-        public static double TotalPayment(int loanAmount, int duration, double rate)
+        public static decimal TotalCost(int loanAmount, int duration, decimal annualRate)
         {
-            double monthlyPayment = MontlhyPayment(loanAmount, duration, rate);
-            double totalPayment = monthlyPayment * duration;
-            
-            return totalPayment;
+            decimal monthlyPayment = MonthlyPayment(loanAmount, duration, annualRate);
+            decimal totalCost = monthlyPayment * duration;
+
+            return (decimal)totalCost;
         }
     }
 }

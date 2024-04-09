@@ -1,9 +1,8 @@
 ﻿using System.Globalization;
-using System.Text.RegularExpressions;
 
 namespace MortageLoan
 {
-    public interface IValidators
+    public static class Validators
     {
         // Loan amount must be greater than 50 000
         public static void ValidateLoanAmount(int loanAmount)

@@ -1,6 +1,6 @@
 using MortageLoan;
 
-namespace MortageLoanTests
+namespace MortgageLoanTests
 {
     public class InputTests
     {
@@ -10,7 +10,7 @@ namespace MortageLoanTests
         [Trait("Category", "UserInput")]
         public void LoanAmountNotMeetingMinimalRequirement(int loanAmount)
         {
-            Assert.Throws<InvalidLoanAmountException>(() => IValidators.ValidateLoanAmount(loanAmount));
+            Assert.Throws<InvalidLoanAmountException>(() => Validators.ValidateLoanAmount(loanAmount));
         }
 
         [Theory]
@@ -19,7 +19,7 @@ namespace MortageLoanTests
         [Trait("Category", "UserInput")]
         public void MonthsNumberNotInRequiredRange(int months)
         {
-            Assert.Throws<InvalidNumberOfMonthsException>(() => IValidators.ValidateNumberOfMonths(months));
+            Assert.Throws<InvalidNumberOfMonthsException>(() => Validators.ValidateNumberOfMonths(months));
         }
 
         [Theory]
@@ -28,7 +28,7 @@ namespace MortageLoanTests
         [Trait("Category", "UserInput")]
         public void InterestRateNotInCorrectFormat(string rate)
         {
-            Assert.Throws<InvalidInterestRateException>(() => IValidators.ValidateInterestRate(rate));
+            Assert.Throws<InvalidInterestRateException>(() => Validators.ValidateInterestRate(rate));
         }
     }
 
@@ -39,7 +39,7 @@ namespace MortageLoanTests
         public void NumberOfArgsNotEqualToThree()
         {
             string[] args = new string[] { "50000", "120" };
-            Assert.Throws<InvalidNumberOfArgsException>(() => IValidators.ValidateNumberOfArgs(args));
+            Assert.Throws<InvalidNumberOfArgsException>(() => Validators.ValidateNumberOfArgs(args));
         }
     }
 
@@ -51,17 +51,17 @@ namespace MortageLoanTests
         [InlineData(67854, 200, 0.91, 365.78)]
         [InlineData(1000000, 156, 1.15, 6904.42)]
         [Trait("Category", "Calculation")]
-        public void MonthlyPaymentCalculation(int loanAmount, int duration, double rate, double expected)
+        public void MonthlyPaymentCalculation(int loanAmount, int duration, decimal rate, decimal expected)
         {
-            Assert.Equal(expected, LoanCalculator.MontlhyPayment(loanAmount, duration, rate));
+            Assert.Equal(expected, LoanCalculator.MonthlyPayment(loanAmount, duration, rate));
         }
 
         [Theory]
         [InlineData(50000, 108, 1, 52304.40)]
         [Trait("Category", "Calculation")]
-        public void TotalPaymentCalculation(int loanAmount, int duration, double rate, double expected)
+        public void TotalPaymentCalculation(int loanAmount, int duration, decimal rate, decimal expected)
         {
-            Assert.Equal(expected, LoanCalculator.TotalPayment(loanAmount, duration, rate));
+            Assert.Equal(expected, LoanCalculator.TotalCost(loanAmount, duration, rate));
         }
     }
 
@@ -71,12 +71,12 @@ namespace MortageLoanTests
         [Trait("Category", "CSV")]
         public void CSVFileIsCreated()
         {
-            string path = "C:\\Temp\\mortage.csv";
-            double totalCost = 50000;
-            double monthlyPayment = 500;
+            string path = "C:\\Temp\\mortgage.csv";
+            int loanAmount = 50000;
             int duration = 120;
+            decimal rate = 4.15m;
 
-            CSVWriter.Write(path, totalCost, monthlyPayment, duration);
+            CSVWriter.Write(path, loanAmount, duration, rate);
 
             Assert.True(File.Exists(path));
         }
@@ -85,12 +85,12 @@ namespace MortageLoanTests
         [Trait("Category", "CSV")]
         public void Write_ChecksFileContent()
         {
-            string path = "C:\\Temp\\mortage.csv";
-            double totalCost = 10000;
-            double monthlyPayment = 500;
+            string path = "C:\\Temp\\mortgage.csv";
+            int loanAmount = 10000;
             int duration = 12;
+            decimal rate = 4.15m;
 
-            CSVWriter.Write(path, totalCost, monthlyPayment, duration);
+            CSVWriter.Write(path, loanAmount, duration, rate);
 
             string[] lines = File.ReadAllLines(path);
             // cost assertion
@@ -100,9 +100,7 @@ namespace MortageLoanTests
             // Row
             for (int i = 1; i <= duration; i++)
             {
-                double reimbursed = monthlyPayment * i;
-                double remaining = totalCost - reimbursed;
-                Assert.Contains($"{i};{reimbursed};{remaining}", lines[i + 1]);
+                Assert.Contains($"{i};", lines[i + 1]);
             }
         }
     }

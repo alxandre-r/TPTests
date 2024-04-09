@@ -1713,14 +1713,14 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "MortageLoan/1.0.0": {
+      "MortgageLoan/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/MortageLoan.dll": {}
+          "bin/placeholder/MortgageLoan.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MortageLoan.dll": {}
+          "bin/placeholder/MortgageLoan.dll": {}
         }
       }
     }
@@ -5517,16 +5517,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "MortageLoan/1.0.0": {
+    "MortgageLoan/1.0.0": {
       "type": "project",
-      "path": "../MortageLoan/MortageLoan.csproj",
-      "msbuildProject": "../MortageLoan/MortageLoan.csproj"
+      "path": "../MortageLoan/MortgageLoan.csproj",
+      "msbuildProject": "../MortageLoan/MortgageLoan.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.NET.Test.Sdk >= 17.5.0",
-      "MortageLoan >= 1.0.0",
+      "MortgageLoan >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -5538,9 +5538,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
-      "projectName": "MortageLoanTests",
-      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortageLoanTests.csproj",
+      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortgageLoanTests.csproj",
+      "projectName": "MortgageLoanTests",
+      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\MortgageLoanTests.csproj",
       "packagesPath": "C:\\Users\\dubte\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoanTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -5559,8 +5559,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj": {
-              "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj"
+            "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortgageLoan.csproj": {
+              "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortgageLoan.csproj"
             }
           }
         }

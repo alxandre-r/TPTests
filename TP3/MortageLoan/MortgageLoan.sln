@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MortageLoan", "MortageLoan.csproj", "{350CD666-517B-4CA0-8709-4E37F784B94B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MortgageLoan", "MortgageLoan.csproj", "{350CD666-517B-4CA0-8709-4E37F784B94B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MortageLoanTests", "..\MortageLoanTests\MortageLoanTests.csproj", "{EB92D415-315F-4F32-A558-828AF2A0EC3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MortgageLoanTests", "..\MortageLoanTests\MortgageLoanTests.csproj", "{EB92D415-315F-4F32-A558-828AF2A0EC3B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{350CD666-517B-4CA0-8709-4E37F784B94B} = {350CD666-517B-4CA0-8709-4E37F784B94B}
 	EndProjectSection

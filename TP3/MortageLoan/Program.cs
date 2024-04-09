@@ -8,21 +8,19 @@ namespace MortageLoan
         {
             try
             {
-                IValidators.ValidateNumberOfArgs(args);
-                IValidators.ValidateInterestRate(args[2]);
+                Validators.ValidateNumberOfArgs(args);
+                Validators.ValidateInterestRate(args[2]);
 
                 int loanAmount = int.Parse(args[0]);
                 int duration = int.Parse(args[1]);
-                double rate = double.Parse(args[2].Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture);
+                decimal rate = decimal.Parse(args[2].Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture);
                 string path = args[3];
 
-                IValidators.ValidateLoanAmount(loanAmount);
-                IValidators.ValidateNumberOfMonths(duration);
+                Validators.ValidateLoanAmount(loanAmount);
+                Validators.ValidateNumberOfMonths(duration);
 
-                double monthlyPayment = LoanCalculator.MontlhyPayment(loanAmount, duration, rate);
-                double totalCost = LoanCalculator.TotalPayment(loanAmount, duration, rate);
 
-                CSVWriter.Write(path, totalCost, monthlyPayment, duration);
+                CSVWriter.Write(path, loanAmount, duration, rate);
             }
             catch (Exception e)
             {

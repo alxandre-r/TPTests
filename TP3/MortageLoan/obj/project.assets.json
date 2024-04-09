@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj",
-      "projectName": "MortageLoan",
-      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortageLoan.csproj",
+      "projectUniqueName": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortgageLoan.csproj",
+      "projectName": "MortgageLoan",
+      "projectPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\MortgageLoan.csproj",
       "packagesPath": "C:\\Users\\dubte\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\dubte\\OneDrive\\Documents\\08 - CNAM\\01 - Cours A2\\Tests\\TP3\\TP3\\MortageLoan\\obj\\",
       "projectStyle": "PackageReference",
